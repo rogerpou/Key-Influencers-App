@@ -31,7 +31,9 @@ if __name__ == "__main__":
             check1=st.checkbox("Ex 1. Price column in Automobile")
             check2=st.checkbox("Ex 2. Price in Diamond")
             check3=st.checkbox("Ex 3. Strength in Concrete")
-            check4=st.checkbox("Ex 4. cnt in Bike")
+            check4=st.checkbox("Ex 4. CNT in Bike")
+            if check1+check2+check3+check4>1:
+                st.sidebar.warning("Check only one example at time")
 
             if check1:
                 from pycaret.datasets import get_data
@@ -134,10 +136,10 @@ if __name__ == "__main__":
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
     st.sidebar.header('About')
-    st.sidebar.warning(
+    st.sidebar.success(
         """
            Python Key Influencers app is maintained by 
-           **Roger Pou López** while working as Data Scientist in Grupo Vall Companys. If you like this app please star its
+           **Roger Pou López** while working as a Data Scientist in Grupo Vall Companys. If you like this app please star its
            [**GitHub**](https://github.com/rogerpou/Key-Influencers-App)
            repo, share it and feel free to open an issue if you find a bug 
            or if you want some additional features. 
