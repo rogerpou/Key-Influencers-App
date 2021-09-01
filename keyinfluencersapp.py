@@ -16,7 +16,8 @@ def load_csv():
 
 
 if __name__ == "__main__":
-    st.set_page_config(page_title="Key Influencers", page_icon="🔍", layout="wide")
+    st.set_page_config(page_title="Python Key Influencers", page_icon="🔍", layout="wide")
+
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
     st.title(
@@ -30,8 +31,11 @@ if __name__ == "__main__":
     st.markdown('-----')
 
     st.sidebar.title("Menu")
+
     st.sidebar.subheader("1. Upload your .csv")
+
     input = st.sidebar.file_uploader(label="Note: only .csv")
+
     if not input:
         st.sidebar.subheader("Or you can directly load a Complete Example")
         with st.sidebar.expander("Examples"):
@@ -47,7 +51,8 @@ if __name__ == "__main__":
         if check1:
             from pycaret.datasets import get_data
             df = get_data('automobile')
-            st.dataframe(df.head(10))
+            with st.expander('Explore data'):
+                st.dataframe(df.head(10))
             with st.spinner("Analyzing..."):
                 reg = pr.setup(
                     df,
@@ -59,13 +64,15 @@ if __name__ == "__main__":
 
                 lgbm = pr.create_model('lightgbm')
                 fig = pr.interpret_model(lgbm)
+                st.text('SHAP analysis of your Data')
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
         if check2:
             from pycaret.datasets import get_data
 
             df = get_data('diamond')
-            st.dataframe(df.head(10))
+            with st.expander('Explore data'):
+                st.dataframe(df.head(10))
             with st.spinner("Analyzing..."):
                 reg = pr.setup(
                     df,
@@ -77,6 +84,7 @@ if __name__ == "__main__":
 
                 lgbm = pr.create_model('lightgbm')
                 fig = pr.interpret_model(lgbm)
+                st.text('SHAP analysis of your Data')
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
         if check3:
@@ -96,13 +104,15 @@ if __name__ == "__main__":
 
                 lgbm = pr.create_model('lightgbm')
                 fig = pr.interpret_model(lgbm)
+                st.text('SHAP analysis of your Data')
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
         if check4:
             from pycaret.datasets import get_data
 
             df = get_data('bike')
-            st.dataframe(df.head(10))
+            with st.expander('Explore data'):
+                st.dataframe(df.head(10))
             with st.spinner("Analyzing..."):
                 reg = pr.setup(
                     df,
@@ -114,6 +124,7 @@ if __name__ == "__main__":
 
                 lgbm = pr.create_model('lightgbm')
                 fig = pr.interpret_model(lgbm)
+                st.text('SHAP analysis of your Data')
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
     if input:
@@ -137,8 +148,10 @@ if __name__ == "__main__":
 
                 lgbm = pr.create_model('lightgbm')
                 fig = pr.interpret_model(lgbm)
+                st.text('SHAP analysis of your Data')
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
+                
     st.sidebar.header('About')
     st.sidebar.success(
         """
