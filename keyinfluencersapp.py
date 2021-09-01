@@ -110,8 +110,6 @@ if __name__ == "__main__":
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
     if input:
-
-
         df = load_csv()
         with st.expander('Explore data'):
             st.dataframe(df.head(10))
@@ -135,7 +133,7 @@ if __name__ == "__main__":
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
     st.sidebar.header('About')
-    st.sidebar.warning(
+    st.sidebar.success(
         """
            Python Key Influencers app is maintained by 
            **Roger Pou López** while working as Data Scientist in Grupo Vall Companys. If you like this app please star its
