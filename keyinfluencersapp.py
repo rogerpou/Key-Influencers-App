@@ -25,12 +25,29 @@ if __name__ == "__main__":
     st.sidebar.title("Menu")
     st.sidebar.subheader("1. Upload your .csv")
     input = st.sidebar.file_uploader(label="Note: only .csv")
+    if not input:
+        if st.sidebar.checkbox("Load Example"):
+            from pycaret.datasets import get_data
+            df = get_data('automobile')
+            with st.expander('Explore data'):
+                st.dataframe(df.head(10))
+            with st.spinner("Analyzing..."):
+                reg = pr.setup(
+                    df,
+                    target='price',
+                    use_gpu=True,
+                    silent=True,
+                    feature_selection=True
+                )
 
+                lgbm = pr.create_model('lightgbm')
+                fig = pr.interpret_model(lgbm)
+                st.pyplot(fig)
+                st.sidebar.success("Succesful Analysis")
     if input:
 
 
         df = load_csv()
-
         with st.expander('Explore data'):
             st.dataframe(df.head(10))
         columns = list(df.columns)
