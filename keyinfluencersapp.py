@@ -26,11 +26,11 @@ if __name__ == "__main__":
     st.sidebar.subheader("1. Upload your .csv")
     input = st.sidebar.file_uploader(label="Note: only .csv")
     if not input:
-        st.write("Or you can Load Example")
-        check1=st.sidebar.checkbox("Example 1. Price column in Automobile Dataset")
-        check2=st.sidebar.checkbox("Example 2. Price in Diamond Dataset")
-        check3=st.sidebar.checkbox("Example 3. Strength in Concrete Dataset")
-        check4=st.sidebar.checkbox("Example 4. cnt in bike Dataset")
+        st.sidebar.text("Or you can Load Example")
+        check1=st.sidebar.checkbox("Ex 1. Price column in Automobile")
+        check2=st.sidebar.checkbox("Ex 2. Price in Diamond")
+        check3=st.sidebar.checkbox("Ex 3. Strength in Concrete")
+        check4=st.sidebar.checkbox("Ex 4. cnt in Bike")
         if check1:
             from pycaret.datasets import get_data
             df = get_data('automobile')
