@@ -26,7 +26,8 @@ if __name__ == "__main__":
     st.sidebar.subheader("1. Upload your .csv")
     input = st.sidebar.file_uploader(label="Note: only .csv")
     if not input:
-        if st.sidebar.checkbox("Load Example"):
+        st.write("Or you can Load Example")
+        if st.sidebar.checkbox("Example 1. Price column in Automobile Dataset"):
             from pycaret.datasets import get_data
             df = get_data('automobile')
             with st.expander('Explore data'):
@@ -44,6 +45,63 @@ if __name__ == "__main__":
                 fig = pr.interpret_model(lgbm)
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
+            if st.sidebar.checkbox("Example 2. Price in Diamond Dataset"):
+                from pycaret.datasets import get_data
+
+                df = get_data('diamond')
+                with st.expander('Explore data'):
+                    st.dataframe(df.head(10))
+                with st.spinner("Analyzing..."):
+                    reg = pr.setup(
+                        df,
+                        target='price',
+                        use_gpu=True,
+                        silent=True,
+                        feature_selection=True
+                    )
+
+                    lgbm = pr.create_model('lightgbm')
+                    fig = pr.interpret_model(lgbm)
+                    st.pyplot(fig)
+                    st.sidebar.success("Succesful Analysis")
+                if st.sidebar.checkbox("Example 3. Strength in Concrete Dataset"):
+                    from pycaret.datasets import get_data
+
+                    df = get_data('concrete')
+                    with st.expander('Explore data'):
+                        st.dataframe(df.head(10))
+                    with st.spinner("Analyzing..."):
+                        reg = pr.setup(
+                            df,
+                            target='strength',
+                            use_gpu=True,
+                            silent=True,
+                            feature_selection=True
+                        )
+
+                        lgbm = pr.create_model('lightgbm')
+                        fig = pr.interpret_model(lgbm)
+                        st.pyplot(fig)
+                        st.sidebar.success("Succesful Analysis")
+                if st.sidebar.checkbox("Example 4. cnt in bike Dataset"):
+                    from pycaret.datasets import get_data
+
+                    df = get_data('concrete')
+                    with st.expander('Explore data'):
+                        st.dataframe(df.head(10))
+                    with st.spinner("Analyzing..."):
+                        reg = pr.setup(
+                            df,
+                            target='cnt',
+                            use_gpu=True,
+                            silent=True,
+                            feature_selection=True
+                        )
+
+                        lgbm = pr.create_model('lightgbm')
+                        fig = pr.interpret_model(lgbm)
+                        st.pyplot(fig)
+                        st.sidebar.success("Succesful Analysis")
     if input:
 
 
@@ -71,12 +129,11 @@ if __name__ == "__main__":
                 st.sidebar.success("Succesful Analysis")
     st.sidebar.header('About')
     st.sidebar.warning(
-
         """
            Python Key Influencer  app is created and maintained by 
            **Roger Pou López**. If you like this app please star its
            [**GitHub**](https://github.com/rogerpou/Key-Influencers-App)
            repo, share it and feel free to open an issue if you find a bug 
-           or if you want some additional features. Feel free check  my [**LinkedIn**](https://www.linkedin.com/in/roger-pou/)
-    """
+           or if you want some additional features. Feel free to check my [**LinkedIn**](https://www.linkedin.com/in/roger-pou/)
+        """
     )
