@@ -22,7 +22,7 @@ if __name__ == "__main__":
     st.title(
         "Python Key Influencers"
     )
-    st.header(
+    st.subheader(
         """
          A simple XAI (Explainable Artificial Intelligence) machine learning app inspired by Key Influencers module from Power BI. 
         """
