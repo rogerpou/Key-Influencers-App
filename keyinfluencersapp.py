@@ -100,7 +100,7 @@ if __name__ == "__main__":
         if check4:
             from pycaret.datasets import get_data
 
-            df = get_data('concrete')
+            df = get_data('bike')
             st.dataframe(df.head(10))
             with st.spinner("Analyzing..."):
                 reg = pr.setup(
