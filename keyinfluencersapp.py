@@ -27,7 +27,11 @@ if __name__ == "__main__":
     input = st.sidebar.file_uploader(label="Note: only .csv")
     if not input:
         st.write("Or you can Load Example")
-        if st.sidebar.checkbox("Example 1. Price column in Automobile Dataset"):
+        check1=st.sidebar.checkbox("Example 1. Price column in Automobile Dataset")
+        check2=st.sidebar.checkbox("Example 2. Price in Diamond Dataset")
+        check3=st.sidebar.checkbox("Example 3. Strength in Concrete Dataset")
+        check4=st.sidebar.checkbox("Example 4. cnt in bike Dataset")
+        if check1:
             from pycaret.datasets import get_data
             df = get_data('automobile')
             with st.expander('Explore data'):
@@ -45,7 +49,7 @@ if __name__ == "__main__":
                 fig = pr.interpret_model(lgbm)
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
-            if st.sidebar.checkbox("Example 2. Price in Diamond Dataset"):
+            if check2:
                 from pycaret.datasets import get_data
 
                 df = get_data('diamond')
@@ -64,7 +68,7 @@ if __name__ == "__main__":
                     fig = pr.interpret_model(lgbm)
                     st.pyplot(fig)
                     st.sidebar.success("Succesful Analysis")
-                if st.sidebar.checkbox("Example 3. Strength in Concrete Dataset"):
+                if check3:
                     from pycaret.datasets import get_data
 
                     df = get_data('concrete')
@@ -83,7 +87,7 @@ if __name__ == "__main__":
                         fig = pr.interpret_model(lgbm)
                         st.pyplot(fig)
                         st.sidebar.success("Succesful Analysis")
-                if st.sidebar.checkbox("Example 4. cnt in bike Dataset"):
+                if check4:
                     from pycaret.datasets import get_data
 
                     df = get_data('concrete')
