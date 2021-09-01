@@ -136,7 +136,7 @@ if __name__ == "__main__":
     st.sidebar.success(
         """
            Python Key Influencers app is maintained by 
-           **Roger Pou López** while working as Data Scientist in [**Grupo Vall Companys IT department**](https://www.vallcompanys.es/). If you like this app please star its
+           **Roger Pou López** while working as Data Scientist in [**Grupo Vall Companys IT department**](https://www.vallcompanys.es/). No property intended. If you like this app please star its
            [**GitHub**](https://github.com/rogerpou/Key-Influencers-App)
            repo, share it and feel free to open an issue if you find a bug 
            or if you want some additional features. 
