@@ -22,6 +22,11 @@ if __name__ == "__main__":
     st.title(
         "Python Key Influencers"
     )
+    st.markdown(
+        """
+        # An inspired app by Key Influencers module from Power BI. 
+        """
+    )
     st.sidebar.title("Menu")
     st.sidebar.subheader("1. Upload your .csv")
     input = st.sidebar.file_uploader(label="Note: only .csv")
