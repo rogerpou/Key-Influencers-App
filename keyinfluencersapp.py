@@ -26,33 +26,16 @@ if __name__ == "__main__":
     st.sidebar.subheader("1. Upload your .csv")
     input = st.sidebar.file_uploader(label="Note: only .csv")
     if not input:
-        st.sidebar.text("Or you can Load Example")
-        check1=st.sidebar.checkbox("Ex 1. Price column in Automobile")
-        check2=st.sidebar.checkbox("Ex 2. Price in Diamond")
-        check3=st.sidebar.checkbox("Ex 3. Strength in Concrete")
-        check4=st.sidebar.checkbox("Ex 4. cnt in Bike")
-        if check1:
-            from pycaret.datasets import get_data
-            df = get_data('automobile')
-            with st.expander('Explore data'):
-                st.dataframe(df.head(10))
-            with st.spinner("Analyzing..."):
-                reg = pr.setup(
-                    df,
-                    target='price',
-                    use_gpu=True,
-                    silent=True,
-                    feature_selection=True
-                )
+        st.sidebar.subheader("Or you can directly load a Complete Example")
+        with st.sidebar.expander("Examples"):
+            check1=st.sidebar.checkbox("Ex 1. Price column in Automobile")
+            check2=st.sidebar.checkbox("Ex 2. Price in Diamond")
+            check3=st.sidebar.checkbox("Ex 3. Strength in Concrete")
+            check4=st.sidebar.checkbox("Ex 4. cnt in Bike")
 
-                lgbm = pr.create_model('lightgbm')
-                fig = pr.interpret_model(lgbm)
-                st.pyplot(fig)
-                st.sidebar.success("Succesful Analysis")
-            if check2:
+            if check1:
                 from pycaret.datasets import get_data
-
-                df = get_data('diamond')
+                df = get_data('automobile')
                 with st.expander('Explore data'):
                     st.dataframe(df.head(10))
                 with st.spinner("Analyzing..."):
@@ -68,16 +51,16 @@ if __name__ == "__main__":
                     fig = pr.interpret_model(lgbm)
                     st.pyplot(fig)
                     st.sidebar.success("Succesful Analysis")
-                if check3:
+                if check2:
                     from pycaret.datasets import get_data
 
-                    df = get_data('concrete')
+                    df = get_data('diamond')
                     with st.expander('Explore data'):
                         st.dataframe(df.head(10))
                     with st.spinner("Analyzing..."):
                         reg = pr.setup(
                             df,
-                            target='strength',
+                            target='price',
                             use_gpu=True,
                             silent=True,
                             feature_selection=True
@@ -87,25 +70,44 @@ if __name__ == "__main__":
                         fig = pr.interpret_model(lgbm)
                         st.pyplot(fig)
                         st.sidebar.success("Succesful Analysis")
-                if check4:
-                    from pycaret.datasets import get_data
+                    if check3:
+                        from pycaret.datasets import get_data
 
-                    df = get_data('concrete')
-                    with st.expander('Explore data'):
-                        st.dataframe(df.head(10))
-                    with st.spinner("Analyzing..."):
-                        reg = pr.setup(
-                            df,
-                            target='cnt',
-                            use_gpu=True,
-                            silent=True,
-                            feature_selection=True
-                        )
+                        df = get_data('concrete')
+                        with st.expander('Explore data'):
+                            st.dataframe(df.head(10))
+                        with st.spinner("Analyzing..."):
+                            reg = pr.setup(
+                                df,
+                                target='strength',
+                                use_gpu=True,
+                                silent=True,
+                                feature_selection=True
+                            )
 
-                        lgbm = pr.create_model('lightgbm')
-                        fig = pr.interpret_model(lgbm)
-                        st.pyplot(fig)
-                        st.sidebar.success("Succesful Analysis")
+                            lgbm = pr.create_model('lightgbm')
+                            fig = pr.interpret_model(lgbm)
+                            st.pyplot(fig)
+                            st.sidebar.success("Succesful Analysis")
+                    if check4:
+                        from pycaret.datasets import get_data
+
+                        df = get_data('concrete')
+                        with st.expander('Explore data'):
+                            st.dataframe(df.head(10))
+                        with st.spinner("Analyzing..."):
+                            reg = pr.setup(
+                                df,
+                                target='cnt',
+                                use_gpu=True,
+                                silent=True,
+                                feature_selection=True
+                            )
+
+                            lgbm = pr.create_model('lightgbm')
+                            fig = pr.interpret_model(lgbm)
+                            st.pyplot(fig)
+                            st.sidebar.success("Succesful Analysis")
     if input:
 
 
@@ -134,10 +136,10 @@ if __name__ == "__main__":
     st.sidebar.header('About')
     st.sidebar.warning(
         """
-           Python Key Influencer  app is created and maintained by 
-           **Roger Pou López**. If you like this app please star its
+           Python Key Influencers app is maintained by 
+           **Roger Pou López** while working as Data Scientist in Grupo Vall Companys. If you like this app please star its
            [**GitHub**](https://github.com/rogerpou/Key-Influencers-App)
            repo, share it and feel free to open an issue if you find a bug 
-           or if you want some additional features. Feel free to check my [**LinkedIn**](https://www.linkedin.com/in/roger-pou/)
+           or if you want some additional features. 
         """
     )
