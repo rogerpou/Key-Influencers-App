@@ -38,8 +38,7 @@ if __name__ == "__main__":
             if check1:
                 from pycaret.datasets import get_data
                 df = get_data('automobile')
-                with st.expander('Explore data'):
-                    st.dataframe(df.head(10))
+                st.dataframe(df.head(10))
                 with st.spinner("Analyzing..."):
                     reg = pr.setup(
                         df,
@@ -57,8 +56,7 @@ if __name__ == "__main__":
                     from pycaret.datasets import get_data
 
                     df = get_data('diamond')
-                    with st.expander('Explore data'):
-                        st.dataframe(df.head(10))
+                    st.dataframe(df.head(10))
                     with st.spinner("Analyzing..."):
                         reg = pr.setup(
                             df,
@@ -95,8 +93,7 @@ if __name__ == "__main__":
                         from pycaret.datasets import get_data
 
                         df = get_data('concrete')
-                        with st.expander('Explore data'):
-                            st.dataframe(df.head(10))
+                        st.dataframe(df.head(10))
                         with st.spinner("Analyzing..."):
                             reg = pr.setup(
                                 df,
