@@ -28,10 +28,10 @@ if __name__ == "__main__":
     if not input:
         st.sidebar.subheader("Or you can directly load a Complete Example")
         with st.sidebar.expander("Examples"):
-            check1=st.sidebar.checkbox("Ex 1. Price column in Automobile")
-            check2=st.sidebar.checkbox("Ex 2. Price in Diamond")
-            check3=st.sidebar.checkbox("Ex 3. Strength in Concrete")
-            check4=st.sidebar.checkbox("Ex 4. cnt in Bike")
+            check1=st.checkbox("Ex 1. Price column in Automobile")
+            check2=st.checkbox("Ex 2. Price in Diamond")
+            check3=st.checkbox("Ex 3. Strength in Concrete")
+            check4=st.checkbox("Ex 4. cnt in Bike")
 
             if check1:
                 from pycaret.datasets import get_data
