@@ -2,3 +2,4 @@ pycaret
 pandas
 streamlit
 numpy
+shap
