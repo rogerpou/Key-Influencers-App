@@ -58,7 +58,7 @@ if __name__ == "__main__":
         """
            Python Key Influencer  app is created and maintained by 
            **Roger Pou López**. If you like this app please star its
-           [**GitHub**](https://github.com/rdzudzar/DistributionAnalyser)
+           [**GitHub**](https://github.com/rogerpou/Key-Influencers-App)
            repo, share it and feel free to open an issue if you find a bug 
            or if you want some additional features. Feel free check  my [**LinkedIn**](https://www.linkedin.com/in/roger-pou/)
     """
