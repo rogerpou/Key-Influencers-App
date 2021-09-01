@@ -24,7 +24,7 @@ if __name__ == "__main__":
     )
     st.markdown(
         """
-        # An inspired app by Key Influencers module from Power BI. 
+        ## A simple XAI (Explainable Artificial Intelligence) machine learning app inspired by Key Influencers module from Power BI. 
         """
     )
     st.sidebar.title("Menu")
