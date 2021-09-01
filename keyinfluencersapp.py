@@ -27,6 +27,7 @@ if __name__ == "__main__":
          A simple XAI (Explainable Artificial Intelligence) machine learning app inspired by Key Influencers module from Power BI. 
         """
     )
+
     st.sidebar.title("Menu")
     st.sidebar.subheader("1. Upload your .csv")
     input = st.sidebar.file_uploader(label="Note: only .csv")
@@ -67,7 +68,7 @@ if __name__ == "__main__":
             with st.spinner("Analyzing..."):
                 reg = pr.setup(
                     df,
-                    target='price',
+                    target='Price',
                     use_gpu=True,
                     silent=True,
                     feature_selection=True
