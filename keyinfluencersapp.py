@@ -31,9 +31,13 @@ if __name__ == "__main__":
     with st.expander("What's going on?"):
         st.write(
             """
-                We are using SHAP (SHapley Additive exPlanation) values, a new fancy game theoretical approach to analise machine learning algorithms  such as Gradient Boosted Tree Models.
+                We are using SHAP (SHapley Additive exPlanation) values, a new fancy game theoretical approach to analise machine learning algorithms such as Gradient Boosted Tree Models like [*LightGBM*](https://lightgbm.readthedocs.io/en/latest/).
+                
                 It connects optimal credit allocation with local explanations using the classic Shapley values from game theory and their related extensions.
-                [*Check source*](https://github.com/slundberg/shap)
+                
+                [*Check original source SHAP library*](https://github.com/slundberg/shap)
+                
+                [*Check PyCaret for AutoML*](https://pycaret.org/)
                 
             """
         )
