@@ -31,7 +31,8 @@ if __name__ == "__main__":
     with st.expander("What's going on?"):
         st.markdown(
             """
-             
+                We are using SHAP (SHapley Additive exPlanation) values, a new fancy game theoretical approach to analise machine learning algorithms  such as Gradient Boosted Tree Models.
+                $g({z'})=\phi_0+\Sigma_{i=1}^{M}\phi_i {z'}_i$
             """
         )
 
