@@ -25,9 +25,16 @@ if __name__ == "__main__":
     )
     st.subheader(
         """
-         A simple XAI (Explainable Artificial Intelligence) machine learning app inspired by Key Influencers module from Power BI. 
+         A simple XAI (eXplainable Artificial Intelligence) machine learning app inspired by Key Influencers module from Power BI. 
         """
     )
+    with st.expander("What's going on?"):
+        st.markdown(
+            """
+             
+            """
+        )
+
     st.markdown('-----')
 
     st.sidebar.title("Menu")
@@ -151,12 +158,12 @@ if __name__ == "__main__":
                 st.text('SHAP analysis of your Data')
                 st.pyplot(fig)
                 st.sidebar.success("Succesful Analysis")
-                
+
     st.sidebar.header('About')
     st.sidebar.success(
         """
            Python Key Influencers app is maintained by 
-           **Roger Pou López** while working as Data Scientist in [**Grupo Vall Companys IT department**](https://www.vallcompanys.es/). No property intended. If you like this app please star its
+           **Roger Pou López** while working as Data Scientist at [**Grupo Vall Companys IT department**](https://www.vallcompanys.es/). No property intended. If you like this app please star its
            [**GitHub**](https://github.com/rogerpou/Key-Influencers-App)
            repo, share it and feel free to open an issue if you find a bug 
            or if you want some additional features. 
