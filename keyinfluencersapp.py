@@ -32,7 +32,9 @@ if __name__ == "__main__":
         st.write(
             """
                 We are using SHAP (SHapley Additive exPlanation) values, a new fancy game theoretical approach to analise machine learning algorithms  such as Gradient Boosted Tree Models.
-                $g({z'})=\phi_0+\Sigma_{i=1}^{M}\phi_i {z'}_i$
+                It connects optimal credit allocation with local explanations using the classic Shapley values from game theory and their related extensions.
+                [*Check source*](https://github.com/slundberg/shap)
+                
             """
         )
 
